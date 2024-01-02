@@ -103,8 +103,8 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
                     emptyStateSubtitle="Go back to Home page for more events"
                     collectionType='All_Events'
                     limits={3}
-                    page={1}
-                    totalPages={1}
+                    page={searchParams.page as string}
+                    totalPages={relatedEvents?.totalPages}
                 />
             </section>
         </>
