@@ -133,7 +133,7 @@ export const getEventsByUser = async ({ userId, limit = 6, page }: GetEventsByUs
         await connectToDatabase()
 
         const conditions = { organizer: userId }
-        const skipAmount = (page - 1) * limit
+        const skipAmount = (Number(page) - 1) * limit
 
         const eventsQuery = Event.find(conditions)
         .sort({ createdAt: 'desc' })
