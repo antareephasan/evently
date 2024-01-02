@@ -89,7 +89,7 @@ export const deleteEvent = async ({ eventId, path }: DeleteEventParams) => {
     try {
         await connectToDatabase();
 
-        const deleteEvent = await Event.findByIdAndDelete({ eventId })
+        const deleteEvent = await Event.findByIdAndDelete(eventId)
 
         if (deleteEvent) revalidatePath(path);
 
